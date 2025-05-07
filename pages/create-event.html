@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Event - PlanIt</title>
+  <link rel="stylesheet" href="../styles/create-event.css" />
+
+</head>
+<body>
+  <h1>Create New Event</h1>
+  
+  <form id="eventForm">
+  
+    <label for="title">Event Title:</label>
+    <input type="text" id="title" placeholder="Event Title" required />
+
+    <label for="description">Description:</label>
+    <textarea id="description" placeholder="Description" required></textarea>
+
+    <label for="date">Event Date:</label>
+    <input type="date" id="date" required />
+
+    <label for="time">Event Time:</label>
+    <input type="time" id="time" required />
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" placeholder="Location" required />
+
+    <button type="submit">Add Event</button>
+  </form>
+
+  <script src="../scripts/create-event.js"></script>
+</body>
+</html>
+
