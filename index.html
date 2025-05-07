@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Management Portal</title>
+  <link rel="stylesheet" href="styles\style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Event Management Portal</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('home')" class="active-nav">Home</button>
+    <button onclick="showSection('create')">Create Event</button>
+    <button onclick="showSection('manage')">Manage Events</button>
+  </nav>
+
+  <div class="container">
+    <!-- Home Page -->
+    <section id="home" class="active">
+      <div class="welcome-message">
+        <h2>Welcome to the Event Management Portal</h2>
+        <p>Create, manage, and organize your events with our easy-to-use platform. Whether you're planning a small gathering or a large conference, we've got you covered.</p>
+      </div>
+      
+      <div class="search-filter-container">
+        <div class="search-box">
+          <input type="text" id="homeSearch" placeholder="Search events..." class="search-input" />
+        </div>
+        <div class="filter-box">
+          <select id="homeFilter" class="filter-select">
+            <option value="all">All Events</option>
+            <option value="upcoming">Upcoming Events</option>
+            <option value="past">Past Events</option>
+          </select>
+        </div>
+        <div class="date-filter-box">
+          <input type="date" id="homeDateFilter" placeholder="Filter by date" />
+        </div>
+      </div>
+      
+      <div id="homeEvents">
+        <!-- Events will be loaded here -->
+      </div>
+      
+      <div class="feature-cards">
+        <div class="feature-card">
+          <i class="fas fa-calendar-plus"></i>
+          <h3>Create Events</h3>
+          <p>Easily create new events with all the details your attendees need.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-edit"></i>
+          <h3>Manage Events</h3>
+          <p>Update or delete your events with just a few clicks.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-search"></i>
+          <h3>Find Events</h3>
+          <p>Quickly find events using our powerful search and filter tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Event Section -->
+    <section id="create">
+      <h2>Create New Event</h2>
+      <form id="eventForm">
+        <div class="form-group">
+          <label for="title">Event Title</label>
+          <input type="text" id="title" required placeholder="Enter event title" />
+        </div>
+        
+        <div class="form-group">
+          <label for="date">Event Date</label>
+          <input type="date" id="date" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" required placeholder="Enter event location" />
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" required placeholder="Enter event description"></textarea>
+        </div>
+        
+        <button type="submit">Create Event</button>
+        <div id="message"></div>
+      </form>
+    </section>
+
+    <!-- Manage Events Section -->
+    <section id="manage">
+      <h2>Manage Events</h2>
+      
+      <div class="search-filter-container">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search events by title..." class="search-input" />
+        </div>
+        <div class="filter-box">
+          <select id="filter" class="filter-select">
+            <option value="all">All Events</option>
+            <option value="upcoming">Upcoming Events</option>
+            <option value="past">Past Events</option>
+          </select>
+        </div>
+        <div class="date-filter-box">
+          <input type="date" id="dateFilter" placeholder="Filter by date" />
+        </div>
+      </div>
+      
+      <div id="eventsList">
+        <!-- Events will be loaded here -->
+      </div>
+    </section>
+
+    <!-- Edit Event Modal -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Edit Event</h2>
+        <form id="editEventForm">
+          <input type="hidden" id="editId">
+          <div class="form-group">
+            <label for="editTitle">Event Title</label>
+            <input type="text" id="editTitle" required placeholder="Enter event title" />
+          </div>
+          
+          <div class="form-group">
+            <label for="editDate">Event Date</label>
+            <input type="date" id="editDate" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="editLocation">Location</label>
+            <input type="text" id="editLocation" required placeholder="Enter event location" />
+          </div>
+          
+          <div class="form-group">
+            <label for="editDescription">Description</label>
+            <textarea id="editDescription" required placeholder="Enter event description"></textarea>
+          </div>
+          
+          <button type="submit">Update Event</button>
+          <div id="editMessage"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Event Management Portal. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts\script.js"></script>
+</body>
+</html>
